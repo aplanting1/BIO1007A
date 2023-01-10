@@ -1,0 +1,49 @@
+---
+title: "BIO1007A"
+author: "Andrew Planting"
+date: "2023-01-10"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment 2
+![](https://a-z-animals.com/media/2021/12/cute-kid-and-lamb-running-at-farm-in-spring-picture-id1145018178-1024x535.jpg)
+
+```{r echo=FALSE,results='asis'}
+library(knitr)
+kable(head(iris[1:3, 1:5])) #this is saying I want rows 1-3 and columns 1-5
+
+```
+
+*Goats* are really cute
+
+**California** just had it's biggest swell in 15 years 
+
+* Groceries
+  + Yogurt
+  + Peanut butter
+ 
+**Best foods**
+
+  1. Chocolate
+  
+  2. Bananas
+
+[Surfline](https://www.surfline.com/)
+
+# Peanut butter is the best
+
+###### Hot take, ketchup is simply not good
+
+* socks^2^ 
+  + $mustard_0$
+
+$y= a + b$ 
+
+`this is fencing`
