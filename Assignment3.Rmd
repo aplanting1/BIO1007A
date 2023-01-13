@@ -2,8 +2,15 @@
 title: "BIO1007A"
 author: "Andrew Planting"
 date: "2023-01-12"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
 
 ### 1. This is question 1
 ```{r}
