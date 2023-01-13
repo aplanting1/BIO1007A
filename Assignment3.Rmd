@@ -1,0 +1,81 @@
+---
+title: "BIO1007A"
+author: "Andrew Planting"
+date: "2023-01-12"
+output: html_document
+---
+
+### 1. This is question 1
+```{r}
+x <- 1.1
+a <- 2.2
+b <- 3.3
+
+z <- x^(a^b)
+print(z)
+
+z <- (x^a)^b
+print(z)
+
+z <- 3*(x)^3 + 2*(x)^2 + 1
+print(z)
+
+```
+
+### 2. This is question 2
+``` {r}
+z <- c(seq(from=1, to=8), seq(from=7, to=1))
+print(z)
+
+z <- c(rep(1, 1), rep(2, 2), rep(3, 3), rep(4, 4), rep(5, 5))
+print(z)
+
+z <- c(rep(5, 1), rep(4, 2), rep (3, 2), rep(2, 4), rep(1, 4))
+print (z)
+
+```
+
+### 3. This is question 3
+
+**Base queue**
+``` {r}
+queue <- c("sheep", "fox", "owl", "ant")
+print (queue)
+```
+
+**Part a**
+``` {r}
+queue <- c("sheep", "fox", "owl", "ant", "serpent")
+print (queue)
+```
+
+
+**Part b**
+``` {r}
+queue <- c("fox", "owl", "ant", "serpent")
+print (queue)
+```
+
+**Part c**
+``` {r}
+queue <- c("donkey", queue[1:4])
+print (queue)
+```
+
+**Part d**
+``` {r}
+queue <- c(queue[1:4])
+print (queue)
+```
+
+**Part e**
+``` {r}
+queue2 = c(queue[1:4])
+queue <- append(queue2, "aphid", after=3)
+print (queue)
+```
+
+**Part f**
+``` {r}
+which(queue == "aphid")
+```
