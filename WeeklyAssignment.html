@@ -12,7 +12,7 @@
 
 <meta name="author" content="Andrew Planting" />
 
-<meta name="date" content="2023-01-09" />
+<meta name="date" content="2023-01-15" />
 
 <title>BIO1007A</title>
 
@@ -67,19 +67,153 @@ code span.ot { color: #007020; }
 <div class="header-title-wrap">
 <h1 class="title toc-ignore entry-title">BIO1007A</h1>
 <h3 class="author">Andrew Planting</h3>
-<h3 class="date">2023-01-09</h3>
+<h3 class="date">2023-01-15</h3>
 </div><!-- /.header-title-wrap -->
 </header>
 
 
 <div class="entry-content">
 
-<div id="assignments" class="section level2">
-<h2>Assignments</h2>
-<p><a href="Assignment1.html">Assignment 1</a></p>
-<p><a href="Assignment2.html">Assignment 2</a></p>
-<p><a href="Assignment3.html">Assignment 3</a></p>
-<p><a href="WeeklyAssignment.html">Weekly Assignment 1</a></p>
+<div id="weekly-assignment-1" class="section level2">
+<h2>Weekly Assignment 1</h2>
+<div id="getting-started" class="section level4">
+<h4>Getting Started</h4>
+<ul>
+<li><p>Download Rstudio</p></li>
+<li><p>Download git specific to your computer</p>
+<ul>
+<li>Mac users will need to install homebrew using this code in the
+terminal (not console)
+<ul>
+<li>/bin/bash -c “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh" class="uri">https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh</a>)”</li>
+<li>brew install git</li>
+</ul></li>
+<li>Ensure that Xcode is installed (ensure that the git version is
+compatible with your computer’s operating system)
+<ul>
+<li>The full Xcode app is not needed, just the essentials. Rstudio will
+prompt you to download the essentials when installing homebrew
+<ul>
+<li>Do NOT attempt to do this while multiple people in the same room are
+trying to do the same (it will take hours… )</li>
+<li>Instead, leave the room and find a different server to connect to.
+This should speed up the process</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="setting-up-a-github-repo" class="section level4">
+<h4>Setting up a GitHub Repo</h4>
+<ul>
+<li>Create a GitHub account</li>
+<li>Create personal access token (PAT)
+<ul>
+<li>Follow these steps in order
+<ul>
+<li><p>Developer settings –&gt; personal access tokens –&gt; generate
+new “classic” token –&gt; name as desired and choose desired expiration
+date –&gt; check the “repo” box –&gt; generate token and be sure to save
+the generated number</p></li>
+<li><p>Install the credentials package by typing the following code</p>
+<ul>
+<li>install.packages(“credentials”)</li>
+<li>git config –global user.email “put github email here” git config
+–global user.name “put your name here” credentials::set_github_pat(“put
+PAT here”)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Now you are ready to create your repo
+<ul>
+<li>Create a new repo by clicking “+” –&gt; name as desired
+<ul>
+<li>Include a READme file and select a license (MIT works just
+fine)</li>
+<li>Do NOT include a gitignore</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="creating-and-linking-the-r-project-to-your-github-repo" class="section level4">
+<h4>Creating and linking the R project to your GitHub repo</h4>
+<ul>
+<li>In Rstudio
+<ul>
+<li>Click on “new project” in the upper rightmost corner of your
+screen</li>
+<li>Click “version control” and select “git”</li>
+</ul></li>
+<li>On GitHub
+<ul>
+<li>Click the green “Code” button and copy the URL</li>
+</ul></li>
+<li>In Rstudio
+<ul>
+<li>Paste the copied URL into the designated URL box</li>
+<li>Name the repo EXACTLY the same thing you named it on GitHub</li>
+<li>Save this project to a desired location on your local computer</li>
+<li>Click “Create Project”</li>
+</ul></li>
+</ul>
+</div>
+<div id="creating-a-webpage-portal-to-be-hosted-by-github-and-hosting-the-index-page" class="section level4">
+<h4>Creating a webpage portal to be hosted by GitHub and hosting the
+index page</h4>
+<ul>
+<li>In Rstudio
+<ul>
+<li>Create a new R markdown file</li>
+<li>Title something along the lines of “setting up home webpage”</li>
+<li>Save the file with the name “index” –&gt; knit to .html</li>
+</ul></li>
+<li>On GitHub
+<ul>
+<li>Go to your repo’s settings
+<ul>
+<li>Under “pages” on the lefthand side click “source”</li>
+<li>Change from none to “main branch”</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="committing-changes" class="section level4">
+<h4>Committing changes</h4>
+<ul>
+<li>We need to commit all these changes to GitHub!</li>
+<li>In terminal
+<ul>
+<li>Check git status to make sure there are changes to commit using “git
+status”</li>
+<li>Add any changes using “git add -A”</li>
+<li>Commit changes using “git commit -am ‘desired commit message’”</li>
+<li>Push changes to GitHub using “git commit”</li>
+<li>Check git status again to make sure everything is up to date</li>
+</ul></li>
+<li>You do not need to do this after each change. Do it enough to save
+your work, but it doesn’t need to get annoying to do!</li>
+</ul>
+</div>
+<div id="troubleshooting" class="section level4">
+<h4>Troubleshooting</h4>
+<ul>
+<li>Ensure you haven’t misspelled anything in your code or missed a
+parenthesis/bracket</li>
+<li>When installing homebrew, ensure you have sufficient bandwidth to
+install the essential Xcode files
+<ul>
+<li>Adequate bandwidth will prevent this step from taking hours</li>
+<li>You do NOT need the 10 GB app!</li>
+</ul></li>
+<li>Make sure everything is labeled corectly. Your Rstudio project must
+be labeled exactlty the same as the GitHub repo you are saving it
+to</li>
+<li>Ensure you have added, committed, and pushed your changes using
+TERMINAL not console</li>
+<li>Be patient! Sometimes it takes a few minutes for pushes to updated
+on GitHub</li>
+</ul>
+</div>
 </div>
 </div><!-- /.entry-content -->
 </article>

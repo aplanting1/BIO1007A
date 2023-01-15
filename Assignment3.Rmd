@@ -11,8 +11,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+## Assignment 3
 
 ### 1. This is question 1
+
+**Part a**
 ```{r}
 x <- 1.1
 a <- 2.2
@@ -20,26 +23,37 @@ b <- 3.3
 
 z <- x^(a^b)
 print(z)
+```
 
+**Part b**
+```{r}
 z <- (x^a)^b
 print(z)
+```
 
+**Part c**
+```{r}
 z <- 3*(x)^3 + 2*(x)^2 + 1
 print(z)
-
 ```
 
 ### 2. This is question 2
+**Part a**
 ``` {r}
 z <- c(seq(from=1, to=8), seq(from=7, to=1))
 print(z)
+```
 
+**Part b**
+``` {r}
 z <- c(rep(1, 1), rep(2, 2), rep(3, 3), rep(4, 4), rep(5, 5))
 print(z)
+```
 
+**Part c**
+``` {r}
 z <- c(rep(5, 1), rep(4, 2), rep (3, 2), rep(2, 4), rep(1, 4))
 print (z)
-
 ```
 
 ### 3. This is question 3
