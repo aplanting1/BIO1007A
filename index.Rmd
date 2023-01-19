@@ -13,6 +13,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Assignments
+
+#### Week 2
 [Assignment 1](Assignment1.html)
 
 [Assignment 2](Assignment2.html)
@@ -20,3 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 [Assignment 3](Assignment3.html)
 
 [Weekly Assignment 1](WeeklyAssignment.html)
+
+#### Week 3
+[Assignment 4](Assignment4.html)
+

@@ -1,0 +1,121 @@
+---
+title: "BIO1007A"
+author: "Andrew Planting"
+date: "2023-01-17"
+output: 
+ prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment 4/5
+
+
+### Assignment 4
+#### This is question 1
+
+**Part a**
+``` {r}
+n_dims <- round(runif(n=1, min=3, max=10)) # base variable 
+
+vec1 <- c(1:(n_dims)^2)
+```
+
+**Part b **
+``` {r}
+sample(vec1)
+```
+
+**Part c**
+``` {r}
+m1 <- matrix(data=vec1, nrow=n_dims, ncol=n_dims)
+print (m1)
+```
+**Part c**
+``` {r}
+t(m1)
+print (m1)
+```
+**Part d (sum and mean) **
+``` {r}
+sum(m1[1,])
+sum(m1[n_dims,])
+mean(m1[1,])
+mean(m1[n_dims,])
+```
+
+**Part e (different matrix size)** 
+```` {r}
+# Did not set seed so the matrix will always be a different size 
+````
+
+### Assignment 5 ###
+
+#### This is question 1
+
+**Part a (creating a list)**
+``` {r}
+vec3 <- c(round(runif(n=4, min=3, max=10)))
+my_matrix <- matrix(data=vec3, nrow=4, ncol=4)
+
+vec4 <- c(round(runif(n=100, min=1, max=100)))
+my_logical <- (vec4 < 50)
+my_letters <- sample(letters, 26)
+
+my_list <- list(my_matrix, my_logical, my_letters) # why does my matrix have uniform rows?
+print (my_list)
+```
+
+**Part b (second list)**
+``` {r}
+my_list2 <- list(my_matrix[2:2], my_logical[2], my_letters[2])
+print (my_list2)
+```
+
+**Part c (typeof, single vector for typeof, data type of single vector)**
+``` {r}
+typeof(my_matrix)
+typeof(my_logical)
+typeof(my_letters)
+
+vec5 <- c(typeof(my_matrix), typeof(my_logical), typeof(my_letters))
+print (vec5)
+data_vec5 <- typeof(vec5)
+print (data_vec5)
+```
+
+#### This is question 2
+**Part a**
+``` {r}
+my_unifs <- runif(n=26, min=0, max=10)
+my_letters <- sample(LETTERS, 26)
+df1 <- data.frame(my_unifs, my_letters, stringsAsFactors=FALSE)
+print(df1)
+
+```
+
+**Part b (NA's)**
+``` {r}
+df1[sample(nrow(df1), 4),1] <- NA
+print (df1)
+
+which(is.na(df1))
+```
+
+**Part c (last three tasks)**
+```{r}
+my_letters2 <- LETTERS
+df2 <- data.frame(my_unifs, my_letters2, stringsAsFactors=FALSE)
+print(df2)
+
+mean(df2$my_unifs)
+
+colnames(df2)[2] <- "my_LETTERS"
+names(df2)
+print (df2)
+
+```
