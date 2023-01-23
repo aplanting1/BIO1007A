@@ -28,6 +28,7 @@ vec1 <- c(1:(n_dims)^2)
 **Part b **
 ``` {r}
 sample(vec1)
+# randVec <- sample(ved) ensures that the matrix values are shuffled as well
 ```
 
 **Part c**
@@ -45,7 +46,7 @@ print (m1)
 sum(m1[1,])
 sum(m1[n_dims,])
 mean(m1[1,])
-mean(m1[n_dims,])
+mean(m1[n_dims,]) # comma and following blank indicates all columns in that row 
 ```
 
 **Part e (different matrix size)** 
@@ -66,8 +67,7 @@ vec4 <- c(round(runif(n=100, min=1, max=100)))
 my_logical <- (vec4 < 50)
 my_letters <- sample(letters, 26)
 
-my_list <- list(my_matrix, my_logical, my_letters) # why does my matrix have uniform rows?
-print (my_list)
+my_list <- list(my_matrix, my_logical, my_letters) 
 ```
 
 **Part b (second list)**
@@ -100,7 +100,7 @@ print(df1)
 
 **Part b (NA's)**
 ``` {r}
-df1[sample(nrow(df1), 4),1] <- NA
+df1[sample(nrow(df1), 4),1] <- NA # ,1 indicates the first column 
 print (df1)
 
 which(is.na(df1))
@@ -112,10 +112,9 @@ my_letters2 <- LETTERS
 df2 <- data.frame(my_unifs, my_letters2, stringsAsFactors=FALSE)
 print(df2)
 
-mean(df2$my_unifs)
+mean(df2$my_unifs, na.rm=T)
 
 colnames(df2)[2] <- "my_LETTERS"
 names(df2)
 print (df2)
-
 ```

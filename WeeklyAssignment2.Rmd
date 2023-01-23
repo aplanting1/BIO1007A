@@ -33,13 +33,15 @@ head (dataOutput)
 
 ```
 
-#### Question 3
+#### Question 3: Generating ANOVA
 ``` {r}
+# the first variable on the left side of the tilda denotes the dependent variable, the right-hand variable denotes the indepdent variable 
+
 myDataAov <- aov(Value ~ Type, data=dataOutput)
 summary(myDataAov)
 
 ```
-#### Question 4
+#### Question 4: p-value of the ANOVA summary 
 ``` {r}
 func_pValue <- function (p=dataOutput) {
   

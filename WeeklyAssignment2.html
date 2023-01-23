@@ -376,25 +376,27 @@ display: none;
 <pre class="r"><code>dataOutput &lt;- myData ()
 head (dataOutput)</code></pre>
 <pre><code>##      Type     Value
-## 1 Control  8.590423
-## 2 Control  8.595181
-## 3 Control  9.621197
-## 4 Control 11.492095
-## 5 Control  8.031206
-## 6 Control 11.767733</code></pre>
+## 1 Control  8.853423
+## 2 Control 11.386068
+## 3 Control  9.523234
+## 4 Control 12.603117
+## 5 Control 10.630536
+## 6 Control 10.682692</code></pre>
 </div>
-<div id="question-3" class="section level4">
-<h4>Question 3</h4>
-<pre class="r"><code>myDataAov &lt;- aov(Value ~ Type, data=dataOutput)
+<div id="question-3-generating-anova" class="section level4">
+<h4>Question 3: Generating ANOVA</h4>
+<pre class="r"><code># the first variable on the left side of the tilda denotes the dependent variable, the right-hand variable denotes the indepdent variable 
+
+myDataAov &lt;- aov(Value ~ Type, data=dataOutput)
 summary(myDataAov)</code></pre>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)    
-## Type         1  15261   15261    6022 &lt;2e-16 ***
-## Residuals   48    122       3                   
+## Type         1  15486   15486    8009 &lt;2e-16 ***
+## Residuals   48     93       2                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
-<div id="question-4" class="section level4">
-<h4>Question 4</h4>
+<div id="question-4-p-value-of-the-anova-summary" class="section level4">
+<h4>Question 4: p-value of the ANOVA summary</h4>
 <pre class="r"><code>func_pValue &lt;- function (p=dataOutput) {
   
   
