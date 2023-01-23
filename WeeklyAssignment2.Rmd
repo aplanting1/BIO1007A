@@ -2,7 +2,10 @@
 title: "BIO1007A"
 author: "Andrew Planting"
 date: "2023-01-22"
-output: html_document
+output: 
+ prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
 ---
 
 ```{r setup, include=FALSE}
@@ -19,11 +22,11 @@ myData <- function (p=NULL) {
     Type <- rep(c("Control", "Treatment"), each=25)
     Value <- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
     p <- data.frame(Type, Value)
-  
+    return (p)
   }
-  return (p)
+ 
 }
-  
+myData()
 ```
 
 #### Question 2
@@ -44,7 +47,9 @@ summary(myDataAov)
 #### Question 4: p-value of the ANOVA summary 
 ``` {r}
 func_pValue <- function (p=dataOutput) {
-  
-  
+  myDataAov <- aov(Value ~ Type, data=dataOutput)
+  pValue <- summary(myDataAov)[[1]][["Pr(>F)"]][1]
+  return (pValue)
 }
+func_pValue(dataOutput)
 ```

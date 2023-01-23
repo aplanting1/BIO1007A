@@ -15,7 +15,7 @@
   }
 myFunc() # runs defaults
 
-myFunc(a=100, b=3.4)\
+myFunc(a=100, b=3.4)
 
 # Multiple return statements
   # FUNCTION: HardyWeinberg

@@ -1,0 +1,75 @@
+---
+title: "BIO1007A"
+author: "Andrew Planting"
+date: "2023-01-23"
+output:
+   prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+``` {r, echo=FALSE}
+library(tidyverse)
+```
+
+## Assignment 6
+
+#### Question 1
+``` {r}
+
+str(iris)
+```
+##### There are 150 observations and 5 varaibles 
+
+#### Question 2
+```{r}
+iris1 <- filter(iris, Species == "virginica" | Species == "versicolor" & Sepal.Length > 6 & Sepal.Width > 2.5)
+print(iris1)
+```
+##### There are 67 observations and 5 variables 
+
+#### Question 3
+``` {r}
+iris2 <- select(iris1, Species, Sepal.Length, Sepal.Width)
+```
+##### There are 67 observations and 3 variables 
+
+#### Question 4
+``` {r}
+iris3 <- arrange(iris2, by=desc(Sepal.Length))
+head(iris3)
+```
+#### Question 5
+``` {r}
+iris4 <- mutate(iris3, Sepal.Area = Sepal.Length*Sepal.Width)
+```
+##### There are 67 observations and 4 variables 
+
+#### Question 6
+``` {r}
+irisTab <- summarize(iris4, meanLength = mean(Sepal.Length), meanWidth = mean(Sepal.Width), TotalNumber = n())
+print (irisTab)
+```
+
+#### Question 7 
+``` {r}
+iris5 <- group_by(iris4, Species)
+iris5 <- summarize(iris5, meanLength = mean(Sepal.Length), meanWidth = mean(Sepal.Width), TotalNumber = n())
+print(iris5)
+```
+
+#### Question 8
+``` {r}
+irisFinal <- iris %>%
+  filter(Species == "virginica" | Species == "versicolor" & Sepal.Length > 6 & Sepal.Width > 2.5) %>%
+  select(Species, Sepal.Length, Sepal.Width) %>%
+  arrange(by=desc(Sepal.Length)) %>%
+  mutate(Sepal.Area = Sepal.Length*Sepal.Width) %>%
+  group_by(Species) %>%
+  summarize(meanLength = mean(Sepal.Length), meanWidth = mean(Sepal.Width), TotalNumber = n())
+print(irisFinal)
+```
