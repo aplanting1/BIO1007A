@@ -12,6 +12,12 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+``` {r, echo=FALSE}
+knitr::include_graphics("IMG_0011.JPG")
+```
+
+Hello, and welcome to my BIO1007 webpage! My name is Andrew, and I am Molecular Biology & Biochemistry major at Middlebury College. This is my wepbage for my January-Term winter class, "Reproducible Biology in R". Here, you will find my daily assignments as well as my weekly assignments. 
+
 ## Assignments
 
 #### Week 2
@@ -21,8 +27,10 @@ knitr::opts_chunk$set(echo = TRUE)
 
 [Assignment 3](Assignment3.html)
 
+#### Week 3
+[Assignments 4 & 5](Assignment4_5.html)
+
+#### Weekly Assignments
 [Weekly Assignment 1](WeeklyAssignment.html)
 
-#### Week 3
-[Assignment 4](Assignment4.html)
-
+[Weekly Assignment 2](WeeklyAssignment2.html)
