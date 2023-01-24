@@ -30,6 +30,9 @@ Hello, and welcome to my BIO1007 webpage! My name is Andrew, and I am Molecular 
 #### Week 3
 [Assignments 4 & 5](Assignment4_5.html)
 
+#### Week 4
+[Assignment 6](Assignment6.html)
+
 #### Weekly Assignments
 [Weekly Assignment 1](WeeklyAssignment.html)
 
