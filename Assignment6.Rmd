@@ -12,7 +12,7 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-``` {r, echo=FALSE}
+``` {r, include=FALSE}
 library(tidyverse)
 ```
 

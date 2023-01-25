@@ -1,0 +1,73 @@
+---
+title: "BIO1007A"
+author: "Andrew Planting"
+date: "2023-01-24"
+output: 
+ prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Assignment 7
+
+``` {r, include=FALSE}
+library(tidyverse)
+library(ggplot2)
+library(ggthemes)
+library(patchwork)
+```
+
+#### Question 1
+``` {r}
+data(starwars)
+moreSpecies <- starwars %>%
+  group_by(species) %>%
+  summarize(TotalNumber = n() ) %>%
+  filter(TotalNumber > 1) 
+ 
+moreSpecies
+
+sw <- starwars %>%
+ filter(species %in% moreSpecies$species) %>%
+  select(1:11)
+sw
+```
+
+#### Question 2
+``` {r}
+swCleanH <- sw[complete.cases(sw[,2]),] %>%
+   group_by(species)
+summaryClean <- summarize(swCleanH, meanHeight= mean(height), medianHeight=median(height), sdHeight=sd(height))
+print(summaryClean)
+```
+#### Question 3
+``` {r}
+p1 <- ggplot(data=swCleanH, aes(x=species, y=height, fill=species)) +
+      geom_boxplot() + 
+      theme_minimal () + 
+      labs(x="Species",
+           y="Height (cm)") +
+      annotate("text", y=max(swCleanH$height), x=max(swCleanH$species), label = "p=1.2E-0.5")
+p1 
+```
+
+#### Question 4
+``` {r}
+p2 <- ggplot(data=swCleanH, aes(x=species, y=height, fill=species)) + 
+  geom_col() +
+  theme_classic () +
+  labs(x="Species",
+       y="Height (cm)") +
+  annotate("text", y=max(swCleanH$height), x=max(swCleanH$species), label = "p=1.2E-0.5")
+p2
+```
+
+#### Question 5
+``` {r}
+library(patchwork)
+p1 / p2
+```
