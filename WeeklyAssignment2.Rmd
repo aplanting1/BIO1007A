@@ -16,8 +16,12 @@ knitr::opts_chunk$set(echo = TRUE)
 
 #### Question 1
 
-``` {r}
-myData <- function (p=NULL) {
+
+
+``` {r} 
+#Setting up a function to return a dataframe that 
+#displays the mean and sd for two variables. if(is.null(p)) isn't necessary here 
+myData <- function (p=NULL) { 
   if(is.null(p)) {
     Type <- rep(c("Control", "Treatment"), each=25)
     Value <- c(rnorm(25, mean=10, sd=1.5), rnorm(25, mean=45, sd=2))
@@ -31,6 +35,8 @@ myData()
 
 #### Question 2
 ``` {r}
+# Assigning the output of the function above to a variable
+# This will allow me to display the the first 6 rows of the dataframe
 dataOutput <- myData ()
 head (dataOutput)
 
@@ -38,7 +44,8 @@ head (dataOutput)
 
 #### Question 3: Generating ANOVA
 ``` {r}
-# the first variable on the left side of the tilda denotes the dependent variable, the right-hand variable denotes the indepdent variable 
+# Displays a summary ANOVA table of the dataframe created in the initial function
+# The first variable on the left side of the tilda denotes the dependent variable, the right-hand variable denotes the independent variable 
 
 myDataAov <- aov(Value ~ Type, data=dataOutput)
 summary(myDataAov)
@@ -46,6 +53,8 @@ summary(myDataAov)
 ```
 #### Question 4: p-value of the ANOVA summary 
 ``` {r}
+# This function displays the p-value of the ANOVA summary
+# Setting this display as a function would allow for different p-values to be easily displayed if the mean and sd of the two initial variables in the first function were changed 
 func_pValue <- function (p=dataOutput) {
   myDataAov <- aov(Value ~ Type, data=dataOutput)
   pValue <- summary(myDataAov)[[1]][["Pr(>F)"]][1]

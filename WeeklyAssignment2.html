@@ -169,101 +169,108 @@ code span.ot { color: #007020; }
 <h2>Weekly Assignment 2</h2>
 <div id="question-1" class="section level4">
 <h4>Question 1</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>myData <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">p=</span><span class="cn">NULL</span>) {</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.null</span>(p)) {</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    Type <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treatment&quot;</span>), <span class="at">each=</span><span class="dv">25</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    Value <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="fl">1.5</span>), <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean=</span><span class="dv">45</span>, <span class="at">sd=</span><span class="dv">2</span>))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Type, Value)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (p)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">myData</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Setting up a function to return a dataframe that </span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">#displays the mean and sd for two variables. if(is.null(p)) isn&#39;t necessary here </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>myData <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">p=</span><span class="cn">NULL</span>) { </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">is.null</span>(p)) {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    Type <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">&quot;Control&quot;</span>, <span class="st">&quot;Treatment&quot;</span>), <span class="at">each=</span><span class="dv">25</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    Value <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean=</span><span class="dv">10</span>, <span class="at">sd=</span><span class="fl">1.5</span>), <span class="fu">rnorm</span>(<span class="dv">25</span>, <span class="at">mean=</span><span class="dv">45</span>, <span class="at">sd=</span><span class="dv">2</span>))</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    p <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Type, Value)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span> (p)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">myData</span>()</span></code></pre></div>
 <pre><code>##         Type     Value
-## 1    Control 10.071574
-## 2    Control  8.373579
-## 3    Control  7.867690
-## 4    Control  9.368839
-## 5    Control 11.977062
-## 6    Control 10.830912
-## 7    Control 11.356522
-## 8    Control 10.243246
-## 9    Control  6.912430
-## 10   Control 11.177553
-## 11   Control  9.817951
-## 12   Control  8.974243
-## 13   Control 10.767088
-## 14   Control 11.474992
-## 15   Control  8.469899
-## 16   Control 11.068046
-## 17   Control 10.831393
-## 18   Control 13.747313
-## 19   Control  7.679125
-## 20   Control 10.464757
-## 21   Control  8.187044
-## 22   Control 10.807563
-## 23   Control 13.467541
-## 24   Control  7.015406
-## 25   Control 12.114714
-## 26 Treatment 40.513184
-## 27 Treatment 46.452323
-## 28 Treatment 45.803013
-## 29 Treatment 44.829080
-## 30 Treatment 44.825612
-## 31 Treatment 44.980363
-## 32 Treatment 46.945176
-## 33 Treatment 44.428224
-## 34 Treatment 45.687621
-## 35 Treatment 44.303728
-## 36 Treatment 45.511345
-## 37 Treatment 42.350570
-## 38 Treatment 45.033347
-## 39 Treatment 42.150566
-## 40 Treatment 45.733177
-## 41 Treatment 46.191281
-## 42 Treatment 44.018563
-## 43 Treatment 45.237394
-## 44 Treatment 45.970703
-## 45 Treatment 43.549291
-## 46 Treatment 40.951813
-## 47 Treatment 43.319913
-## 48 Treatment 44.820585
-## 49 Treatment 45.897530
-## 50 Treatment 48.265056</code></pre>
+## 1    Control  9.763425
+## 2    Control  8.883952
+## 3    Control 10.178280
+## 4    Control 12.338316
+## 5    Control 13.989147
+## 6    Control 10.374491
+## 7    Control  8.714161
+## 8    Control 10.488568
+## 9    Control  7.789113
+## 10   Control  9.158346
+## 11   Control  8.687475
+## 12   Control 10.976654
+## 13   Control  9.229386
+## 14   Control 10.174851
+## 15   Control 10.222360
+## 16   Control 10.269096
+## 17   Control 10.824224
+## 18   Control 10.775880
+## 19   Control  9.491009
+## 20   Control 10.352910
+## 21   Control  9.883627
+## 22   Control  9.644198
+## 23   Control 12.194006
+## 24   Control  9.345876
+## 25   Control 10.126795
+## 26 Treatment 46.489625
+## 27 Treatment 43.708812
+## 28 Treatment 42.598642
+## 29 Treatment 41.175089
+## 30 Treatment 49.901377
+## 31 Treatment 44.595799
+## 32 Treatment 42.496126
+## 33 Treatment 46.269565
+## 34 Treatment 48.618710
+## 35 Treatment 43.059048
+## 36 Treatment 44.677408
+## 37 Treatment 43.904318
+## 38 Treatment 44.759081
+## 39 Treatment 42.165302
+## 40 Treatment 44.966410
+## 41 Treatment 43.035197
+## 42 Treatment 44.611488
+## 43 Treatment 49.429238
+## 44 Treatment 44.618021
+## 45 Treatment 45.227379
+## 46 Treatment 46.681314
+## 47 Treatment 42.193803
+## 48 Treatment 46.125915
+## 49 Treatment 48.112031
+## 50 Treatment 45.636021</code></pre>
 </div>
 <div id="question-2" class="section level4">
 <h4>Question 2</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>dataOutput <span class="ot">&lt;-</span> <span class="fu">myData</span> ()</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> (dataOutput)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Assigning the output of the function above to a variable</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This will allow me to display the the first 6 rows of the dataframe</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>dataOutput <span class="ot">&lt;-</span> <span class="fu">myData</span> ()</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span> (dataOutput)</span></code></pre></div>
 <pre><code>##      Type     Value
-## 1 Control  8.287987
-## 2 Control  8.515247
-## 3 Control  9.132619
-## 4 Control 12.986611
-## 5 Control 10.217867
-## 6 Control 10.952582</code></pre>
+## 1 Control 12.324686
+## 2 Control  6.929437
+## 3 Control  7.966108
+## 4 Control  7.225902
+## 5 Control 11.576717
+## 6 Control  9.266030</code></pre>
 </div>
 <div id="question-3-generating-anova" class="section level4">
 <h4>Question 3: Generating ANOVA</h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the first variable on the left side of the tilda denotes the dependent variable, the right-hand variable denotes the indepdent variable </span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>myDataAov <span class="ot">&lt;-</span> <span class="fu">aov</span>(Value <span class="sc">~</span> Type, <span class="at">data=</span>dataOutput)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(myDataAov)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Displays a summary ANOVA table of the dataframe created in the initial function</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># The first variable on the left side of the tilda denotes the dependent variable, the right-hand variable denotes the independent variable </span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>myDataAov <span class="ot">&lt;-</span> <span class="fu">aov</span>(Value <span class="sc">~</span> Type, <span class="at">data=</span>dataOutput)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(myDataAov)</span></code></pre></div>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)    
-## Type         1  15736   15736    4463 &lt;2e-16 ***
-## Residuals   48    169       4                   
+## Type         1  16357   16357    3952 &lt;2e-16 ***
+## Residuals   48    199       4                   
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 </div>
 <div id="question-4-p-value-of-the-anova-summary" class="section level4">
 <h4>Question 4: p-value of the ANOVA summary</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>func_pValue <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">p=</span>dataOutput) {</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  myDataAov <span class="ot">&lt;-</span> <span class="fu">aov</span>(Value <span class="sc">~</span> Type, <span class="at">data=</span>dataOutput)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  pValue <span class="ot">&lt;-</span> <span class="fu">summary</span>(myDataAov)[[<span class="dv">1</span>]][[<span class="st">&quot;Pr(&gt;F)&quot;</span>]][<span class="dv">1</span>]</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (pValue)</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="fu">func_pValue</span>(dataOutput)</span></code></pre></div>
-<pre><code>## [1] 5.11113e-49</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This function displays the p-value of the ANOVA summary</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Setting this display as a function would allow for different p-values to be easily displayed if the mean and sd of the two initial variables in the first function were changed </span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>func_pValue <span class="ot">&lt;-</span> <span class="cf">function</span> (<span class="at">p=</span>dataOutput) {</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  myDataAov <span class="ot">&lt;-</span> <span class="fu">aov</span>(Value <span class="sc">~</span> Type, <span class="at">data=</span>dataOutput)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  pValue <span class="ot">&lt;-</span> <span class="fu">summary</span>(myDataAov)[[<span class="dv">1</span>]][[<span class="st">&quot;Pr(&gt;F)&quot;</span>]][<span class="dv">1</span>]</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span> (pValue)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">func_pValue</span>(dataOutput)</span></code></pre></div>
+<pre><code>## [1] 9.182648e-48</code></pre>
 </div>
 </div>
 </div><!-- /.entry-content -->
