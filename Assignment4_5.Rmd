@@ -112,7 +112,7 @@ my_letters2 <- LETTERS
 df2 <- data.frame(my_unifs, my_letters2, stringsAsFactors=FALSE)
 print(df2)
 
-mean(df2$my_unifs, na.rm=T)
+mean(df2$my_unifs, na.rm=T) #na.rm=T eliminates NA's in mean calculation 
 
 colnames(df2)[2] <- "my_LETTERS"
 names(df2)
