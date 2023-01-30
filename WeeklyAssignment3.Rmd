@@ -42,11 +42,14 @@ oak <- read.table("BIO1007A_Data/dispersion_data.csv", header=TRUE, sep=",", str
 glimpse(oak)
 clean_oak <- oak[complete.cases(oak[,2]),] #removing NA's
 
-pOak<- ggplot(data=clean_oak, aes(x=Distance)) +  #creating plot 
-  geom_histogram(fill="white", color="black", bins=16, center=10) + #specifying fill color of the bars, bar outline color, # of bars
+clean_oak<-clean_oak %>%
+  mutate(NewDist = Distance*1000)
+
+pOak<- ggplot(data=clean_oak, aes(x=NewDist, y=Nmales)) +  #creating plot 
+  geom_bar(fill="white", color="black", stat="identity", position="dodge", width=30) + #specifying fill color of the bars, bar outline color, # of bars
   ylab("N male western bluebirds") + # labeling axes
   xlab("Meters dispersed from natal territory") +
-  scale_y_continuous(breaks = seq(0,12,by=2)) + # scaling axes
+ scale_y_continuous(breaks = seq(0,12,by=2)) + # scaling axes
   scale_x_continuous(breaks= c(0,500,1000,1500)) +
   theme_classic() + # setting theme 
   theme(axis.line = element_line(colour = "black"), # removing borders (except for axes)

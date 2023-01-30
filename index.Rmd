@@ -37,6 +37,9 @@ Hello, and welcome to my BIO1007 webpage! My name is Andrew, and I am Molecular 
 
 [Assignment 8](Assignment8.html)
 
+#### Week 5
+[Assignment 9](Assignment9.html)
+
 #### Weekly Assignments
 [Weekly Assignment 1](WeeklyAssignment.html)
 
