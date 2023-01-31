@@ -18,26 +18,22 @@ knitr::include_graphics("IMG_0011.JPG")
 
 Hello, and welcome to my BIO1007 webpage! My name is Andrew, and I am Molecular Biology & Biochemistry major at Middlebury College. This is my wepbage for my January-Term winter class, "Reproducible Biology in R". Here, you will find my daily assignments as well as my weekly assignments. 
 
-## Assignments
+#### Daily Assignments
 
-#### Week 2
 [Assignment 1](Assignment1.html)
 
 [Assignment 2](Assignment2.html)
 
 [Assignment 3](Assignment3.html)
 
-#### Week 3
 [Assignments 4 & 5](Assignment4_5.html)
 
-#### Week 4
 [Assignment 6](Assignment6.html)
 
 [Assignment 7](Assignment7.html)
 
 [Assignment 8](Assignment8.html)
 
-#### Week 5
 [Assignment 9](Assignment9.html)
 
 #### Weekly Assignments
@@ -48,3 +44,6 @@ Hello, and welcome to my BIO1007 webpage! My name is Andrew, and I am Molecular 
 [Weekly Assignment 3](WeeklyAssignment3.html)
 
 [Weekly Assignment 4](WeeklyAssignment4.html)
+
+#### Final Assignment 
+[Final Assignment](FinalAssignment.html)
