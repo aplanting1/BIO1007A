@@ -145,7 +145,7 @@ regPlot <- ggplot(data=dryadData,aes(x=mean.hydro,y=count.total.adults)) +
     cat(3 + 2,"\n")
     cat(3+i,"\n") 
   }
-
+  
   my_dogs <- c("chow","akita","malamute","husky","samoyed") # counter variable, single for loop
   for (i in 1:length(my_dogs)){
     cat("i =",i,"my_dogs[i] =" ,my_dogs[i],"\n")

@@ -16,3 +16,60 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r, include=FALSE}
 library(tidyverse)
 ```
+
+#### Question 1
+``` {r}
+
+myNum <- c(0,0,0,1,0,1,0,1,0,0,1,1,1,0,0,0)
+counter <- 0
+for (i in 1:length(myNum)){
+if (myNum[i] == 0) {counter <- counter + 1}
+}
+print(counter)
+```
+
+#### Question 2
+``` {r}
+funcMat <- function(numRow, numCol) {
+  mat <- matrix(nrow=numRow, ncol=numCol)
+  for (i in 1:numRow) {
+    for (j in 1:numCol) {
+      mat[i,j] <- i*j
+    }
+  }
+  
+  return(mat)
+}
+funcMat(4,4)
+```
+
+#### Question 3
+``` {r}
+# function from Weekly Assignment 2
+myData <- function (mean1=10, sd1=1.5, mean2=45, sd2=2, n=25) { 
+  
+    Type <- rep(c("Control", "Treatment"), each=n)
+    Value <- c(rnorm(n, mean = mean1, sd=sd1), rnorm(n, mean=mean2, sd=sd2))
+    p <- data.frame(Type, Value)
+    return (p)
+}
+dataOutput <- myData ()
+
+myDataAov <- aov(Value ~ Type, data=dataOutput)
+
+# function from Weekly Assignment 2
+func_pValue <- function (df=dataOutput) {
+  myDataAov <- aov(Value ~ Type, data=df)
+  pValue <- summary(myDataAov)[[1]][["Pr(>F)"]][1]
+  return (pValue)
+}
+func_pValue()
+
+# Creating for loop for the above functions
+newFrame <- data.frame(replicates= rep(NA, each=100), pVal= rep(NA, each=100))
+for (i in 1:100) {
+  newFrame[i, 2] = func_pValue(myData())
+  newFrame[i, 1] = i
+}
+print(newFrame)
+```
