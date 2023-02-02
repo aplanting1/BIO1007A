@@ -104,7 +104,7 @@ plot_F2_1B  <- ggplot(data=dataF2, aes(x=Total.Precipitation.T, y=Trichoptera)) 
   theme_classic() +
   ylab("Mean Density Trichoptera (# insects/2400 cm^2)") +
   xlab("Total Winter Precipitation (cm)") +
-  scale_y_discrete(labels=c("0", "1", "2", "3", "4", "5")) +
+ # scale_y_discrete(labels=c("0", "1", "2", "3", "4", "5")) +
   scale_x_continuous(breaks=seq(0.0,35.0, by=5)) +
   annotate("text", x=10, y=15, label="B") +
   theme(axis.title=element_text(size=6)) 
