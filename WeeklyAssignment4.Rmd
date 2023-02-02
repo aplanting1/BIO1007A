@@ -1,0 +1,48 @@
+---
+title: "BIO1007A"
+author: "Andrew Planting"
+date: "2023-01-31"
+output: 
+ prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+---
+## Weekly Assignment 4
+
+**Task:**
+
+Simulate a brand new data frame (the type of data is up to you) and conduct a statistical analysis in R using 2 variables. Create a basic ggplot that goes with the analysis.
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, include=FALSE}
+library(tidyverse)
+library(ggthemes)
+library(ggplot2)
+```
+
+**Plan:**
+
+I am interested in seeing if there is a differnece in avg. sepal length between species in the iris data set. X is categorical, y is continuous so the statistical test needed is a t-test/standard ANOVA
+```{r}
+glimpse(iris)
+dIris <- select(iris, "Species","Sepal.Length")# isolating Species and sepal length from the iris data set
+df_iris <- dIris %>% # creating a dataframe with species name and avg sepal length for each 
+  group_by(Species) %>%
+  summarize(Avg.Sepal.Length=mean(Sepal.Length))
+print(df_iris)
+
+# creating ggplot
+p_iris <- ggplot(data=df_iris, aes(x=Species, y=Avg.Sepal.Length, fill=Species)) + 
+  geom_bar(stat="identity", position = "dodge") +
+  ylab ("Average sepal length") +
+  xlab ("Species") + 
+  theme_classic()
+p_iris
+
+# running ANOVA
+pIris_anova <- aov(Sepal.Length~Species, data=dIris)
+summary(pIris_anova)
+```
