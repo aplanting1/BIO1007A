@@ -79,7 +79,7 @@ Option 1 (original):
 
 dataF2 <- read.table("BIO1007A_Data/eeLab_data.csv", header=TRUE, sep=",", stringsAsFactors = TRUE) 
 
-plot_F2_1A <-ggplot(data=dataF2, aes(x=Total.Precipitation.T, y=Trichoptera)) +
+plot_F2_1A <-ggplot(data=dataF2, aes(x=Total.Precipitation.E, y=Ephemeroptera)) +
   geom_point(size=3, shape=21, color="red", fill="red") +
   geom_smooth(method="lm", se=F, linetype="dashed") +
   
