@@ -91,7 +91,7 @@ plot_F2_1A <-ggplot(data=dataF2, aes(x=Total.Precipitation.T, y=Trichoptera)) +
   xlab("Total Winter Precipitation (cm)") +
   scale_y_continuous(breaks=c(0.0,5.0,10.0,15.0,20.0)) +
   scale_x_continuous(breaks=seq(0.0,35.0, by=5)) +
-  annotate("text", x=10, y=15, label="A") +
+  annotate("text", x=10, y=15, label="A", fontface=2) +
   theme(axis.title=element_text(size=6)) #changing text size of axes 
 
 plot_F2_1B  <- ggplot(data=dataF2, aes(x=Total.Precipitation.T, y=Trichoptera)) +
@@ -106,7 +106,7 @@ plot_F2_1B  <- ggplot(data=dataF2, aes(x=Total.Precipitation.T, y=Trichoptera)) 
   xlab("Total Winter Precipitation (cm)") +
  # scale_y_discrete(labels=c("0", "1", "2", "3", "4", "5")) +
   scale_x_continuous(breaks=seq(0.0,35.0, by=5)) +
-  annotate("text", x=10, y=15, label="B") +
+  annotate("text", x=10, y=15, label="B", fontface=2) +
   theme(axis.title=element_text(size=6)) 
 
 
